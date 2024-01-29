@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+  Это главная страница проекта
+{% endblock %}
+{% block header %}
+  Это главная страница проекта
+{% endblock %}
+{% block content %}
+<div>
+  <table border='3px' style='border-collapse:collapse;'>
+    <tr>
+      <td>ID</td> <td>Сумма</td> <td>Реквизиты</td> <td>Статус</td> 
+    </tr>
+  {% for payreq in page_obj %}
+    <tr>
+      {% include 'includes/payinfo.html' %}
+    </tr>  
+  {% endfor %}
+  </table>
+</div>
+{% endblock %}

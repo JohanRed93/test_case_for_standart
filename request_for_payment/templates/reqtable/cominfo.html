@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+  Список реквизитов
+{% endblock %}
+{% block header %}
+  Список реквизитов
+{% endblock %}
+{% block content %}
+<div>
+  <table border='3px' style='border-collapse:collapse;'>
+    <tr>
+      <td>Тип платежа</td><td>Тип картысчета</td> <td>Фамилия</td><td>Имя</td><td>Отчество</td><td>Телефон</td><td>Лимит</td>
+    </tr>
+  {% for cominfo in page_obj %}
+    <tr>
+      {% include 'includes/clientlist.html' %}
+    </tr>  
+  {% endfor %}
+  </table>
+</div>
+{% endblock %}
